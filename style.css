@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    overflow: hidden;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #faebd7;
+}
+
+.sistema-solar{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    right: 5%;
+}
+
+@keyframes girar {
+from {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+to{
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+}
+
+
+body {
+    background:
+        radial-gradient(circle at top, #000000, #060b16);
+}

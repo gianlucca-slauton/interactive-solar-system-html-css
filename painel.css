@@ -1,0 +1,36 @@
+.painel {
+    position: fixed;
+
+    right: -400px;
+    top: 0;
+
+    width: 350px;
+    height: 100vh;
+
+    background: #0f0f14f2;
+
+    padding: 30px;
+
+    transition: 0.5s;
+
+    border-left: 1px solid #ffffff1a;
+}
+
+.painel:target {
+    right: 0;
+}
+
+
+
+.fechar {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 32px;
+}
