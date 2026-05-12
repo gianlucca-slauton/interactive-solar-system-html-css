@@ -3,6 +3,8 @@
 Interactive 2D Solar System made using only HTML and CSS.  
 Sistema Solar 2D interativo feito usando apenas HTML e CSS.
 
+An interactive 2D Solar System built entirely with HTML and CSS, featuring animated planetary orbits, clickable planets, information panels, and no JavaScript.
+
 - HTML5
 - CSS3
 
