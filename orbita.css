@@ -1,6 +1,65 @@
+.botao-orbitas{
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    background: #111827;
+    color: #ffffff;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    border: 2px solid rgba(255,255,255,0.2);
+
+    z-index: 9999;
+
+    transition: 0.3s;
+}
+
+.botao-orbitas:hover{
+    background: #1f2937;
+}
+
+
+/* Esconde o checkbox */
+#toggle-orbitas{
+    display: none;
+}
+
+
+#toggle-orbitas:checked ~ .sistema-solar .orbita{
+    border-color: transparent;
+    transition-duration: 0.3s;
+}
+
+
+#toggle-orbitas:checked ~ .sistema-solar .lua-orbita{
+    border-color: transparent;
+    transition-duration: 0.3s;
+}
+
+
+/* Texto alternando */
+#toggle-orbitas:checked + .botao-orbitas::after{
+    content: "Mostrar Órbitas";
+}
+
+#toggle-orbitas:not(:checked) + .botao-orbitas::after{
+    content: "Ocultar Órbitas";
+}
+
+
+
+/* Orbitas */
 .orbita{
     position: absolute;
-    border: 1px dashed #ffffff26;
+    border: 1px dashed #5d6d7a;
     border-radius: 50%;
     pointer-events: none;
 
@@ -9,6 +68,9 @@
 
     transform: translate(-50%, -50%);
     animation: linear infinite girar;
+
+    transition-duration: 0.3s;
+    
 }
 
 
@@ -38,21 +100,58 @@
 
     transform: translate(-50%, -50%);
 
-    box-shadow: 0 0 20px #ff5100,
-    0 0 40px #ff3c00;
+   background: #ff481a;
 
+    animation: pulsarSol 8s ease-in-out infinite;
 
-    background-image: url(https://www.solarsystemscope.com/spacepedia/images/handbook/renders/sun.png);
-    background-size: 135px;
+    /* brilho inicial */
+    box-shadow:
+        0 0 20px #ff5100,
+        0 0 40px #ff3c00,
+        0 0 80px rgba(255, 81, 0, 0.7);
+
+            background-image: url("https://www.solarsystemscope.com/spacepedia/images/handbook/renders/sun.png");
+    background-size: 136px;
     background-position: center;
+    background-repeat: no-repeat;
+
 }
 
+@keyframes pulsarSol {
+
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+
+        box-shadow:
+            0 0 10px #ff5100,
+            0 0 30px #ff3c00,
+            0 0 60px rgba(255, 81, 0, 0.7);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+
+        box-shadow:
+            0 0 30px #ff7300,
+            0 0 60px #ff5100,
+            0 0 80px rgba(255, 115, 0, 1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+
+        box-shadow:
+            0 0 10px #ff5100,
+            0 0 20px #ff3c00,
+            0 0 60px rgba(255, 81, 0, 0.7);
+    }
+}
 
 
 .mercurio-orbita {
     width: 180px;
     height: 180px;
-    animation-duration: 18s;
+    
 
 }
 .mercurio{
@@ -71,7 +170,7 @@
 .venus-orbita{
     width: 260px;
     height: 260px;
-    animation-duration: 24s;
+
 }
 .venus{
     width: 32px;
@@ -87,11 +186,53 @@
 }
 
 
+@keyframes brilho-venus {
+    0% {
+        box-shadow: 
+            0 0 6px rgba(255, 170, 80, 0.5),
+            0 0 12px rgba(255, 140, 50, 0.3),
+            0 0 20px rgba(255, 120, 40, 0.2);
+    }
+    100% {
+        box-shadow: 
+            0 0 14px rgba(255, 190, 100, 0.8),
+            0 0 20px rgba(255, 160, 70, 0.6),
+            0 0 25px rgba(255, 140, 50, 0.4);
+    }
+    
+}.venus::before{
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 45px;
+    height: 45px;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background: radial-gradient(circle, 
+        rgba(255,170,80,0.4) 20%, 
+        rgba(255,140,50,0.2) 55%, 
+        rgba(255,120,40,0.1) 75%, 
+        transparent 10%
+    );
+
+    filter: blur(4px);
+
+    z-index: -1;
+
+    animation: aura-venus 3s ease-in-out infinite alternate;
+}
+
 .terra-orbita{
     width: 360px;
     height: 360px;
-    animation-duration: 36s;
+  
 }
+
 .terra{
     width: 34px;
     height: 34px;
@@ -107,10 +248,10 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 .lua-orbita {
     position: absolute;
 
-    width: 52px;
-    height: 55px;
+    width: 63px;
+    height: 67px;
 
-    border: 0.5px dashed rgba(255,255,255,0.2);
+    border: 0.5px dashed rgba(255, 255, 255, 0.42);
 
     border-radius: 50%;
 
@@ -120,14 +261,15 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
     transform:
         translate(-50%, -50%);
 
-    animation:
-        girar 5s linear infinite;
+        transition-duration: 1s;
+
 }
+
 .lua {
     position: absolute;
 
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
 
     background: #d8d8d8;
 
@@ -159,20 +301,18 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 }
 
 
-
-
 .marte-orbita{
     width: 450px;
     height: 450px;
-    animation-duration: 48s;
+   
 }
+
 .marte{
     width: 28px;
     height: 28px;
     background: #ff3300;
 
     top: -14px;
-
 
     background-image: url(https://www.solarsystemscope.com/spacepedia/images/handbook/renders/mars.png);
     background-size: cover;
@@ -182,7 +322,7 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 .jupiter-orbita{
     width: 560px;
     height: 560px;
-    animation-duration: 60s;
+
 }
 .jupiter{
     width: 55px;
@@ -200,7 +340,7 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 .saturno-orbita{
     width: 700px;
     height: 700px;
-    animation-duration: 90s;
+ 
 }
 .saturno{
     width: 46px;
@@ -239,7 +379,7 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 .urano-orbita{
     width: 825px;
     height: 825px;
-    animation-duration: 130s;
+ 
 }
 .urano{
     width: 42px;
@@ -258,7 +398,7 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
 .netuno-orbita{
     width: 950px;
     height: 950px;
-    animation-duration: 165s;
+  
 }
 .netuno{
     width: 38px;
@@ -273,3 +413,9 @@ background-image: url(https://cdn.creazilla.com/cliparts/79039/planet-earth-clip
     background-size: 39px;
     background-position: center;
 }
+
+.sistema-solar:has(.planeta:hover) .orbita,
+.sistema-solar:has(.planeta:hover) .lua-orbita{
+    animation-play-state: paused;
+}
+
