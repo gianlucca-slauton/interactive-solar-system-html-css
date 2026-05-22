@@ -1,36 +1,125 @@
 .painel {
     position: fixed;
 
-    right: -400px;
-    top: 0;
+    right: 30px;
+    top: 50%;
 
-    width: 350px;
-    height: 100vh;
+    transform:
+        translateY(-50%)
+        translateX(30px);
 
-    background: #0f0f14f2;
+    width: 500px;
+    height: 600px;
 
-    padding: 30px;
+    overflow-y: auto;
 
-    transition: 0.5s;
+    padding: 20px;
 
-    border-left: 1px solid #ffffff1a;
-}
+    border-radius: 20px;
 
-.painel:target {
-    right: 0;
-}
+    background: #000000cc;
 
-
-
-.fechar {
-    position: absolute;
-
-    top: 20px;
-    right: 20px;
+    backdrop-filter: blur(10px);
 
     color: #ffffff;
 
-    text-decoration: none;
+    border-left: 1px solid #ffffff1a;
 
-    font-size: 32px;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.sistema-solar:has(.sol:hover) .sol-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.terra:hover) .terra-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.lua:hover) .lua-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.mercurio:hover) .mercurio-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.venus:hover) .venus-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+
+.sistema-solar:has(.marte:hover) .marte-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.jupiter:hover) .jupiter-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.saturno:hover) .saturno-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.urano:hover) .urano-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
+}
+
+.sistema-solar:has(.netuno:hover) .netuno-painel{
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(-50%)
+        translateX(-5%);
 }
