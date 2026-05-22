@@ -1,0 +1,71 @@
+@keyframes girar {
+from {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+to{
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+}
+ 
+
+.orbita{
+    border-radius: 50%;
+
+    animation: linear infinite girar;
+}
+
+
+.mercurio-orbita {
+    
+    animation-duration: 18s;
+
+}
+
+
+.venus-orbita{
+    
+    animation-duration: 24s;
+}
+
+
+.terra-orbita{
+    
+    animation-duration: 36s;
+}
+
+
+.lua-orbita {
+
+    animation:
+        girar 5s linear infinite;
+}
+
+
+.marte-orbita{
+  
+    animation-duration: 48s;
+}
+
+
+.jupiter-orbita{
+  
+    animation-duration: 60s;
+}
+
+
+.saturno-orbita{
+
+    animation-duration: 90s;
+}
+
+
+.urano-orbita{
+
+    animation-duration: 130s;
+}
+
+.netuno-orbita{
+    
+    animation-duration: 165s;
+}
