@@ -3,7 +3,7 @@
 Interactive 2D Solar System made using only HTML and CSS.  
 Sistema Solar 2D interativo feito usando apenas HTML e CSS.
 
-An interactive 2D Solar System built entirely with HTML and CSS, featuring animated planetary orbits, clickable planets, information panels, and no JavaScript.
+An interactive 2D Solar System built entirely with HTML and CSS, featuring animated planetary orbits, hover planets, information panels, and no JavaScript.
 
 - HTML5
 - CSS3
@@ -13,8 +13,9 @@ An interactive 2D Solar System built entirely with HTML and CSS, featuring anima
 ## Features
 
 - Animated planetary orbits
-- Clickable planets with information panels  
-- Planet textures  
+- Planets with hover and information panels  
+- Planet textures
+- Responsive design for different screen sizes
 - No JavaScript  
 
 ---
@@ -23,12 +24,13 @@ An interactive 2D Solar System built entirely with HTML and CSS, featuring anima
 
 <a href="https://gianlucca-slauton.github.io/interactive-solar-system-html-css/" target="_blank">https://gianlucca-slauton.github.io/interactive-solar-system-html-css/</a>
 
-<img width="1622" height="1079" alt="Captura de tela 2026-05-11 212500" src="https://github.com/user-attachments/assets/7a1bbbca-56d0-47d2-97db-5471bdd78c28" />
+<img width="1919" height="1078" alt="Captura de tela 2026-05-21 221932" src="https://github.com/user-attachments/assets/981a1806-5635-4746-9868-cace78814aa0" />
+
 
 ---
 
 ## Project Goal | Objetivo do Projeto
 
-This project was created to explore advanced CSS animations and build a visually appealing Solar System without using JavaScript.
+This project was created to explore advanced CSS animations, responsive design techniques, and build a visually appealing Solar System without using JavaScript.
 
-Este projeto foi criado para explorar animações avançadas em CSS e construir um Sistema Solar visualmente bonito sem usar JavaScript.
+Este projeto foi criado para explorar animações avançadas em CSS, técnicas de responsividade, e construir um Sistema Solar visualmente bonito sem usar JavaScript.
