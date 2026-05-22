@@ -16,21 +16,372 @@ body{
     position: relative;
     width: 100vw;
     height: 100vh;
+    
     right: 5%;
-}
-
-@keyframes girar {
-from {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-to{
-    transform: translate(-50%, -50%) rotate(360deg);
-}
 }
 
 
 body {
     background:
         radial-gradient(circle at top, #000000, #060b16);
+}
+
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 80% 20%, white, transparent),
+      radial-gradient(1.5px 1.5px at 50% 70%, white, transparent),
+      radial-gradient(2px 2px at 30% 80%, white, transparent),
+      radial-gradient(1px 1px at 70% 60%, white, transparent),
+      radial-gradient(2px 2px at 10% 50%, white, transparent),
+      radial-gradient(1px 1px at 90% 75%, white, transparent);
+
+    animation: piscar 3s infinite alternate;
+    z-index: -2;
+}
+
+
+body::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(1px 1px at 15% 15%, white, transparent),
+      radial-gradient(1px 1px at 60% 35%, white, transparent),
+      radial-gradient(1px 1px at 85% 55%, white, transparent),
+      radial-gradient(1px 1px at 40% 90%, white, transparent);
+
+    animation: piscar 5s infinite alternate;
+    z-index: -2;
+}
+
+@keyframes piscar{
+    0%{opacity:0.4;}
+    50%{opacity:1;}
+    100%{opacity:0.5;}
+}
+
+/* meteoros */
+.meteoro{
+    position:absolute;
+    width:150px;
+    height:2px;
+    background: linear-gradient(to right, #ffffff, transparent);
+    transform: rotate(-35deg);
+    animation: cair 8.5s linear infinite;
+    z-index:-1;
+}
+
+
+@keyframes cair{
+    from{
+        transform: translate(0,0) rotate(-35deg);
+        opacity:1;
+    }
+    to{
+        transform: translate(-1400px,700px) rotate(-35deg);
+        opacity:0;
+    }
+}
+
+..meteoro{
+    position: absolute;
+    width: 300px;
+    height: 120px;
+    transform: rotate(-35deg);
+    animation: cair 100s linear infinite;
+    z-index: -1;
+}
+
+
+.meteoro::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+
+    background-image: url('https://png.pngtree.com/png-vector/20250329/ourmid/pngtree-fiery-meteor-with-glowing-flames-for-space-and-natural-disaster-illustration-png-image_15899239.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter:
+      drop-shadow(0 0 15px yellow)
+      drop-shadow(0 0 30px orange)
+      drop-shadow(0 0 50px red);
+}
+
+
+.meteoro::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45px;
+    width: 230px;
+    height: 25px;
+
+    background: linear-gradient(
+        to left,
+        rgba(255,255,255,0.9),
+        rgba(255,255,0,0.8),
+        rgba(255,140,0,0.7),
+        rgba(255,0,0,0.4),
+        transparent
+    );
+
+    border-radius: 50%;
+    filter: blur(8px);
+
+    animation: fogo 5s infinite alternate;
+}
+
+
+@keyframes fogo{
+    0%{
+        transform: scaleY(1);
+        filter: blur(8px);
+    }
+    100%{
+        transform: scaleY(1.4);
+        filter: blur(12px);
+    }
+}
+
+/* posições */
+.m1{
+    top: -25%;
+    left: 120%;
+    animation-delay: 3s;
+}
+
+.m2{
+    top: -30%;
+    left: 150%;
+    animation-delay: 10s;
+}
+
+.m3{
+    top: -30%;
+    left: 160%;
+    animation-delay: 20s;
+}
+
+
+@keyframes cair{
+    0%{
+        transform: translate(0,0) rotate(-35deg) scale(.6);
+        opacity:0.1;
+    }
+
+    2%{
+        opacity:0.4;
+    }
+
+    10%{
+        transform: translate(-1800px,1000px) rotate(-35deg) scale(1.2);
+        opacity:0.3;
+    }
+
+    12%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+/* responsividade */
+
+    @media (max-width: 768px){
+
+    body{
+        overflow: hidden;
+    }
+
+    .sistema-solar{
+        position: relative;
+
+        width: 100vw;
+        height: 100vh;
+
+        transform: scale(0.72);
+
+        transform-origin: center center;
+
+        bottom: 22%;
+    }
+
+    /* ESCONDE */
+
+    .venus-orbita,
+    .marte-orbita,
+    .jupiter-orbita,
+    .urano-orbita,
+    .netuno-orbita{
+        display: none;
+    }
+
+  
+
+    .sol{
+        width: 120px;
+        height: 120px;
+
+        background-size: cover;
+    }
+
+ 
+
+    .mercurio-orbita{
+        width: 170px;
+        height: 170px;
+        
+    }
+
+    .mercurio{
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .terra-orbita{
+        width: 320px;
+        height: 320px;
+
+        
+    }
+
+    .terra{
+        width: 36px;
+        height: 36px;
+    }
+
+    .lua-orbita{
+        width: 65px;
+        height: 65px;
+    }
+
+    .lua{
+        width: 16px;
+        height: 16px;
+    }
+
+
+
+    .saturno-orbita{
+        width: 220px;
+        height: 220px;
+        
+    }
+
+    .saturno{
+        width: 52px;
+        height: 52px;
+    }
+
+    .saturno::after{
+        width: 82px;
+        height: 16px;
+    }
+
+
+
+    .painel{
+        position: fixed;
+
+        left: 50%;
+        top: 50%;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+
+        width: 95vw;
+        height: 65vh;
+
+        padding: 22px;
+
+        border-radius: 22px;
+
+
+        z-index: 999999;
+    }
+
+    /* MOSTRAR */
+
+    .sistema-solar:has(.mercurio:hover) .mercurio-painel,
+    .sistema-solar:has(.terra:hover) .terra-painel,
+    .sistema-solar:has(.lua:hover) .lua-painel,
+    .sistema-solar:has(.saturno:hover) .saturno-painel,
+    .sistema-solar:has(.sol:hover) .sol-painel{
+
+        opacity: 1;
+        visibility: visible;
+
+        transform:
+            translate(-100%, -50%)
+            scale(0.75);
+
+            top: 121%;
+    }
+
+
+
+    .botao-orbitas {
+
+        top: 12px;
+        left: 12px;
+
+        padding: 5px !important;
+
+        font-size: 14px !important;
+
+        border-radius: 6px;
+
+        z-index: 999999;
+    }
+
+    
+    .m1{
+    top: 25%;
+    left: 120%;
+    animation-delay: 3s;
+}
+
+.m2{
+    top: 50%;
+    left: 140%;
+    animation-delay: 10s;
+}
+
+.m3{
+    top: 18%;
+    left: 160%;
+    animation-delay: 20s;
+}
+
 }
