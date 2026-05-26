@@ -20,7 +20,7 @@ An interactive 2D Solar System built entirely with HTML and CSS, featuring anima
 
 ---
 
-### Live preview | Visualização online
+### Live preview
 
 <a href="https://gianlucca-slauton.github.io/interactive-solar-system-html-css/" target="_blank">https://gianlucca-slauton.github.io/interactive-solar-system-html-css/</a>
 
